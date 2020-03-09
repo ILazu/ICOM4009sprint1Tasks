@@ -11,16 +11,10 @@ class SpacePlane:
     zCoordinate=0.00
     
     def setX(self, xValue):
-        if xValue < 20:
-            self.__x = xValue
-        else:
-            self.__x = 20
+        self.__x = xValue
 
     def setY(self, yValue):
-        if yValue < 20:
-            self.__y = yValue
-        else:
-            self.__y = 20
+        self.__y = yValue
       
     def setZ(self, zValue):
         self.__z = zValue
