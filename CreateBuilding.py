@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 from PIL import ImageTk,Image
 
 import 3DPlane as sp
@@ -36,11 +37,21 @@ def draw(x,y,a1,a2):# dibujo
     p2=y
     
 def building():
-    
+
+#Saves the current map to a text file. This file will contain all current buildings
+#and paths on a map, to a file with a name of the user's choosing.
+#author: Enrique A. Marrero Torres
+def saveMap(self):
+    f = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
+    if f is None:  # asksaveasfile return `None` if dialog closed with "cancel".
+        return
+    textToSave = "something" #placeholder to avoid errors
+    f.write(textToSave)
+    f.close()
 
 #buttons
 B = tk.Button(root, text ="Draw Building", command=building).place(x=160,y=420)
-
+S = tk.Button(root, text = "Save Map", command = saveMap).place(x = 320, y = 420)
 
 
 
