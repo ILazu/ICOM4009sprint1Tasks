@@ -35,7 +35,11 @@ def draw(x,y,a1,a2):# dibujo
     line = canvas.create_line(a1,a2,x,y,width=3)
     p1=x
     p2=y
-    
+
+def selectTexture(self):
+    texture = filedialog.askopenfile(title = "Select Texture", filetypes = (("PNG files","*.png"),("all files","*.*")))
+    #TODO: Do something with the image!
+
 def building():
 
 #Saves the current map to a text file. This file will contain all current buildings
