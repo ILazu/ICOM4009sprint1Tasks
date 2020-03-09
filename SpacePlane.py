@@ -1,6 +1,6 @@
 import math
 
-class 3DPlane:
+class SpacePlane:
     def __init__(self,x, y, z):
         self.setX(x)
         self.setY(y)
