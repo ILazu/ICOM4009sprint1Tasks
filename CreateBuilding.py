@@ -29,7 +29,14 @@ if polar==False:
     e2.place(x=215, y=470)
 
 
+def __init__(self, bldgName):
+    self.setBldgName(bldgName)
 
+def setBldgName(self, bldgName):
+    self.__bldgName = bldgName
+
+def getBldgName(self):
+    return self.__bldgName
 def draw(x,y,a1,a2):# dibujo
     global p1,p2
     line = canvas.create_line(a1,a2,x,y,width=3)
@@ -53,6 +60,16 @@ def saveMap(self):
     f.write(textToSave)
     f.close()
 
+
+def saveBldg(self):
+    fname = getBldgName() + ".txt"
+    f = open(fname, 'w')
+    if f is None:  # asksaveasfile return `None` if dialog closed with "cancel".
+        return
+    textToSave = "something"  # placeholder to avoid errors
+    f.write(textToSave)
+    f.close()
+    
 #buttons
 B = tk.Button(root, text ="Draw Building", command=building).place(x=160,y=420)
 S = tk.Button(root, text = "Save Map", command = saveMap).place(x = 320, y = 420)
